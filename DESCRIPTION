@@ -1,4 +1,4 @@
-Package: CTSclosks
+Package: CTSclocks
 Title: Cell type specific DNAm age estimating
 Version: 0.0.0.9000
 Authors@R: c(
@@ -6,7 +6,7 @@ Authors@R: c(
     person("Xiaolong", "Guo", , "guoxiaolong2022@sinh.ac.cn", role = "aut"),
     person("Andrew E.", "Teschendorff", , "andrew@picb.ac.cn", role = "aut")
   )
-Description: CTSclosks is an R package which includes epigenetic clocks that are not 
+Description: CTSclocks is an R package which includes epigenetic clocks that are not 
         confounded by cell-type heterogeneity and that can yield biological age estimates 
         at cell-type resolution. At present, the package can be used to estimate DNAm age
         at cell type level for brain (neuron, gliacyte) and liver (hepatocyte). Besides, 
