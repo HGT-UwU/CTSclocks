@@ -1,4 +1,6 @@
 .Rproj.user
-.Rhistory
 .Rbuildignore
+.Rhistory
+.gitignore.swp
 .gitignore
+CTSclocks.Rproj
