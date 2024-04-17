@@ -105,7 +105,7 @@ CTSclockAge = function(data.m, CTSclock = c('Neu-In', 'Neu-Ex', 'Glia-In', 'Glia
 #### Auxilliary functions
 #' @import HiBED
 #'
-ProcessData = function(data.m, dataType = c('bulk', 'sorted'), tissue = c('brain', 'other'), CTF.m = NULL, coreNum = coreNum){
+ProcessData = function(data.m, dataType = c('bulk', 'sorted'), tissue = c('brain', 'otherTissue'), CTF.m = NULL, coreNum = coreNum){
 
   if(dataType == 'sorted'){
     ## Normalize the data
@@ -121,7 +121,7 @@ ProcessData = function(data.m, dataType = c('bulk', 'sorted'), tissue = c('brain
         colnames(estF.m) = c('EndoStrom', 'Glia', 'Neu')
         estF.m = estF.m[, c('Neu', 'Glia', 'EndoStrom')]
         CTF.m = as.matrix(estF.m)
-      }else if(dataType == 'other'){
+      }else if(tissue == 'otherTissue'){
         stop("Cell type fraction matrix (CTF.m) is missing. If you don't have it, you are recommended to
               use R package EpiSCORE, EpiDISH or some other deconvolution algorithms to estimate the cell
               type fractions of your samples.")
