@@ -37,8 +37,8 @@ A vecter of the predicted DNAm ages.
 This is the function for computing DNA methylation age using CTS clocks.
 The inputs including DNAm matrix, the CTS clock you want to use, is your
 DNAm data from bulk tissue sample or sorted cell sample, cell type fraction
-matrix if you want to use Neu-In/Glia-In/Brain clock and tissue of your DNAm
-data samples.
+matrix if you want to use Neu-In/Glia-In/Brain clock, tissue of your DNAm
+data samples and the number of cores if you want to do parallel computing.
 }
 \examples{
 data(MurphyGSE88890)
