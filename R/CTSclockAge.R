@@ -4,20 +4,20 @@
 #' Predict DNA methylation age using CTS clocks
 #'
 #' @description
-#' This is the function for computing DNA methylation age using CTS clocks.
-#' The inputs including DNAm matrix, the CTS clock you want to use, is your
-#' DNAm data from bulk tissue sample or sorted cell sample, cell type fraction
-#' matrix if you want to use Neu-In/Glia-In/Brain clock, tissue of your DNAm
-#' data samples and the number of cores if you want to do parallel computing.
+#' This is the function for computing DNA methylation age using CTS (cell type
+#' specific) clocks. The inputs including DNAm matrix, the CTS clock you want to
+#' use, is your DNAm data from bulk tissue sample or sorted cell sample, cell
+#' type fraction matrix if you want to use Neu-In/Glia-In/Brain clock, tissue of
+#' your DNAm data samples and the number of cores if you want to do parallel computing.
 #'
 #'
 #'
 #' @param data.m
 #' A DNAm matrix (row: CpGs, column: samples) of the samples you want to get
-#' DNAm age predicted by CTS clock.
+#' DNAm age predicted by a CTS clock.
 #'
 #' @param CTSclock
-#' Which CTSclock you want to use to predicte DNAm age ('Neu-In', 'Neu-Ex',
+#' Which CTSclock you want to use to predict DNAm age ('Neu-In', 'Neu-Ex',
 #' 'Glia-In', 'Glia-Ex', 'Brain', 'Hep', 'Liver').
 #'
 #' @param dataType
@@ -75,7 +75,7 @@ CTSclockAge = function(data.m, CTSclock = c('Neu-In', 'Neu-Ex', 'Glia-In', 'Glia
   if (CTSclock %in% c('Neu-In', 'Neu-Ex', 'Glia-In', 'Glia-Ex', 'Brain')){
     data(list = paste0(CTSclock, 'Coef'))
 
-    if (CTSclock %in% c('Neu-Ex', 'Glia-Ex', 'Hep', 'Liver')){
+    if (CTSclock %in% c('Neu-Ex', 'Glia-Ex')){
       DNAmAgePred.v = pred(data.m, clockCoef.df)
     }else if(CTSclock %in% c('Neu-In', 'Glia-In', 'Brain')){
       data.m = ProcessData(data.m, dataType = dataType, tissue = tissue, CTF.m = CTF.m, coreNum = coreNum)
@@ -122,9 +122,7 @@ ProcessData = function(data.m, dataType = c('bulk', 'sorted'), tissue = c('brain
         estF.m = estF.m[, c('Neu', 'Glia', 'EndoStrom')]
         CTF.m = as.matrix(estF.m)
       }else if(tissue == 'otherTissue'){
-        stop("Cell type fraction matrix (CTF.m) is missing. If you don't have it, you are recommended to
-              use R package EpiSCORE, EpiDISH or some other deconvolution algorithms to estimate the cell
-              type fractions of your samples.")
+        stop("Cell type fraction matrix (CTF.m) is missing. If you don't have it, you are recommended to use R package EpiSCORE, EpiDISH or some other deconvolution algorithms to estimate the cell type fractions of your samples.")
       }
     }
     ## Adjust for cell type fractions and normalize the data

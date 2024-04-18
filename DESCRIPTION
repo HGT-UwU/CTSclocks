@@ -1,6 +1,6 @@
 Package: CTSclocks
 Title: Cell type specific DNAm age estimating
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: c(
     person("Huige", "Tong", , "Tonghuige2021@sinh.ac.cn", role = c("aut", "cre")),
     person("Xiaolong", "Guo", , "guoxiaolong2022@sinh.ac.cn", role = "aut"),
@@ -16,7 +16,14 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports: 
-    glmnet,
-    HiBED,
-    parallel
+Imports: glmnet, HiBED, parallel, stats
+NeedsCompilation: no
+Packaged: 2024-04-18 13:07:49 UTC; tonghuige
+Author: Huige Tong [aut, cre],
+  Xiaolong Guo [aut],
+  Andrew E. Teschendorff [aut]
+Maintainer: Huige Tong <Tonghuige2021@sinh.ac.cn>
+Depends: R (>= 3.5.0)
+Suggests: BiocStyle, knitr, RefManageR, rmarkdown, sessioninfo,
+        testthat, ggplot2, ggpubr
+VignetteBuilder: knitr
