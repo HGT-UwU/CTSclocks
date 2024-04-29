@@ -1,7 +1,7 @@
 ---
 title: "Introduction to CTSclocks"
 author:
-- name: "Huige Tong"
+ - name: "Huige Tong"
    affiliation: "Shanghai Institute of Nutrition and Health, CAS"
    email: "tonghuige2021@sinh.ac.cn"
  - name: "Xiaolong Guo"
