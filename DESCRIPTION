@@ -1,6 +1,6 @@
 Package: CTSclocks
 Title: Cell type specific DNAm age estimating
-Version: 0.1.0
+Version: 0.0.1
 Authors@R: c(
     person("Huige", "Tong", , "Tonghuige2021@sinh.ac.cn", role = c("aut", "cre")),
     person("Xiaolong", "Guo", , "guoxiaolong2022@sinh.ac.cn", role = "aut"),
