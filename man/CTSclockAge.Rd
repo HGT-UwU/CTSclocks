@@ -54,5 +54,5 @@ plot(Age, agePred.v)
 
 }
 \references{
-Huige Tong, Xiaolong Guo and Andrew E Teschendorff. 2024. "Cell-type specific epigenetic clocks to quantify biological age at cell-type resolution." Submitted.
+Huige Tong, Xiaolong Guo, Qi Luo and Andrew E Teschendorff. 2024. "Cell-type specific epigenetic clocks to quantify biological age at cell-type resolution." Submitted.
 }

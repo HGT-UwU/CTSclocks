@@ -2,9 +2,9 @@ Package: CTSclocks
 Title: Cell type specific DNAm age estimating
 Version: 0.0.1
 Authors@R: c(
-    person("Huige", "Tong", , "Tonghuige2021@sinh.ac.cn", role = c("aut", "cre")),
+    person("Huige", "Tong", , "tonghuige2021@sinh.ac.cn", role = c("aut", "cre")),
     person("Xiaolong", "Guo", , "guoxiaolong2022@sinh.ac.cn", role = "aut"),
-    person("Andrew E.", "Teschendorff", , "andrew@picb.ac.cn", role = "aut")
+    person("Andrew E.", "Teschendorff", , "andrew@sinh.ac.cn", role = "aut")
   )
 Description: CTSclocks is an R package which includes epigenetic clocks that are not 
         confounded by cell-type heterogeneity and that can yield biological age estimates 
@@ -22,7 +22,7 @@ Packaged: 2024-04-29 06:06:58 UTC; tonghuige
 Author: Huige Tong [aut, cre],
   Xiaolong Guo [aut],
   Andrew E. Teschendorff [aut]
-Maintainer: Huige Tong <Tonghuige2021@sinh.ac.cn>
+Maintainer: Huige Tong <tonghuige2021@sinh.ac.cn>
 Depends: R (>= 4.2.2)
 Suggests: BiocStyle, knitr, RefManageR, rmarkdown, sessioninfo,
         testthat, ggplot2, ggpubr
