@@ -209,3 +209,6 @@ ggscatter(
     scale_y_continuous(breaks = seq(10, 90, by = 20), limits = c(10, 90))
 
 
+## ----sessionInfo, echo=FALSE--------------------------------------------------
+sessionInfo()
+
