@@ -2,14 +2,8 @@
 title: "Introduction to CTSclocks"
 author:
  - name: "Huige Tong"
-   affiliation: "Shanghai Institute of Nutrition and Health, CAS"
-   email: "tonghuige2021@sinh.ac.cn"
  - name: "Xiaolong Guo"
-   affiliation: "Shanghai Institute of Nutrition and Health, CAS"
-   email: "guoxiaolong2022@sinh.ac.cn"
  - name: "Andrew E Teschendorff"
-   affiliation: "Shanghai Institute of Nutrition and Health, CAS"
-   email: "andrew@sinh.ac.cn"
 date: "2024-04-295"
 package: CTSclocks
 output:
