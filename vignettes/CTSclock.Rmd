@@ -15,7 +15,7 @@ output:
   BiocStyle::html_document:
     theme: readable
 abstract: |
- CTSclocks is an R package which includes epigenetic clocks that are not confounded by cell-type heterogeneity and that can yield biological age estimates at cell-type resolution. At present, the package can be used to estimate DNAm age at cell type level for brain (neuron, gliacyte) and liver (hepatocyte). Besides, the package also provides clocks that allows the estimation of DNAm age at tissue level for brain and liver.
+ CTSclocks is an R package which includes a number of cell-type specific epigenetic clocks so as to quantify biological age at cell-type resolution. At present, the package can be used to estimate DNAm-Age for neurons and glia in brain, and for hepatocytes in liver. In addition, the package also provides two tissue-specific clocks that allow estimation of DNAm-Age at the tissue level (for brain and liver). 
 vignette: >
   %\VignetteIndexEntry{Tutorial for R package CTSclocks}
   %\VignetteEngine{knitr::rmarkdown}
@@ -26,10 +26,8 @@ vignette: >
 knitr::opts_chunk$set(crop = NULL)
 ```
 
-
-
 # Motivation and Background
-The ability to accurately quantify biological age could help monitor and control healthy aging. Epigenetic clocks have emerged as promising tools for estimating biological age, yet so far, most of these clocks have been developed in the context of heterogeneous bulk tissues, which does not inform us about the biological age of individual cell-types. Thus, there is a need to develop epigenetic clocks that are not confounded by cell-type heterogeneity and that can yield biological age estimates at cell-type resolution. Using brain and liver tissue as prototypes, we here apply advanced cell-type deconvolution methods to build and validate neuron and hepatocyte specific DNA methylation clocks. We show that these cell-type specific clocks yield improved estimates of chronological age in the corresponding cell and tissue-types. We further demonstrate that neuron and glia specific clocks display biological age acceleration in Alzheimer’s Disease, whereas the hepatocyte clock is accelerated in the liver of obese individuals. In contrast, non-cell-type specific clocks do not display biological age-acceleration, or only do so more marginally.
+The ability to accurately quantify biological age could help monitor and control healthy aging. Epigenetic clocks have emerged as promising tools for estimating biological age, yet so far, most of these clocks have been developed in the context of heterogeneous bulk tissues, which does not inform us about the biological age of individual cell-types. Thus, there is a need to develop epigenetic clocks that are not confounded by cell-type heterogeneity and that can yield biological age estimates at cell-type resolution. Here we present a tutorial on the implementation of cell-type and tissue-specific epigenetic DNA methylation-based clocks for brain and liver, focusing on 3 cell-types: neurons, glia and hepatocytes. In future, we hope to expand this package to include cell-type and tissue-specific clocks for a broader range of cell and tissue-types. Of note, all epigenetic clocks implemented in this package adjust for cell-type heterogeneity in the sense that the CpGs making up the clocks are not just tracking age-related changes in cell-type composition. The difference between the cell-type and tissue-specific clocks is that the cell-type specific ones are trained from CpGs that change with age specifically in the given cell-type (hence this is naturally adjusted for cell-type heterogeneity), whereas the tissue-specific clocks are trained on CpGs that change with age independently of cell-type compositional changes. Hence the latter don't inform about which cell-types a CpG is changing in.
 
 
 # Data used in this tutorial
