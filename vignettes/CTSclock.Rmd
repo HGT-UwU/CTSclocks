@@ -44,9 +44,9 @@ The ability to accurately quantify biological age could help monitor and control
 ## Clocks for Brain
 
 -   Neu-In clock (Neu-InCoef.rda)
--   Neu-Ex clock (Neu-ExCoef.rda)
+-   Neu-Sin clock (Neu-SinCoef.rda)
 -   Glia-In clock (Glia-InCoef.rda)
--   Glia-Ex clock (Glia-ExCoef.rda)
+-   Glia-Sin clock (Glia-SinCoef.rda)
 -   Brain clock (BrainCoef.rda)
 
 ## Clocks for Liver
@@ -147,10 +147,10 @@ print(p)
 
 </br></br>
 
-## Neu-Ex and Glia-Ex clocks
+## Neu-Sin and Glia-Sin clocks
 
 -   For both bulk data and sorted data, these clocks should be applied directly on the beta matrix.
--   Here we apply Neu-In clock on a bulk PFC data from Murphy et al and a sorted neuron data from Pai et al. The Glia-Ex clock works the same way with Neu-Ex clock.
+-   Here we apply Neu-In clock on a bulk PFC data from Murphy et al and a sorted neuron data from Pai et al. The Glia-Sin clock works the same way with Neu-Sin clock.
 
 ### Bulk data
 
@@ -158,7 +158,7 @@ print(p)
 library(CTSclocks)
 
 data(MurphyGSE88890)
-agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Ex', dataType = 'bulk', CTF.m = NULL, tissue = 'brain')
+agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Sin', dataType = 'bulk', CTF.m = NULL, tissue = 'brain')
 ```
 
 ```{r echo=FALSE}
@@ -198,7 +198,7 @@ print(p)
 library(CTSclocks)
 
 data(PaiGSE112179)
-agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Ex', dataType = 'sorted', CTF.m = NULL, tissue = 'brain')
+agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Sin', dataType = 'sorted', CTF.m = NULL, tissue = 'brain')
 ```
 
 ```{r echo=FALSE}

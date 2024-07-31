@@ -17,8 +17,8 @@
 #' DNAm age predicted by a CTS clock.
 #'
 #' @param CTSclock
-#' Which CTSclock you want to use to predict DNAm age ('Neu-In', 'Neu-Ex',
-#' 'Glia-In', 'Glia-Ex', 'Brain', 'Hep', 'Liver').
+#' Which CTSclock you want to use to predict DNAm age ('Neu-In', 'Neu-Sin',
+#' 'Glia-In', 'Glia-Sin', 'Brain', 'Hep', 'Liver').
 #'
 #' @param dataType
 #' Type of the samples in your DNAm data ('bulk' or 'sorted').
@@ -67,15 +67,15 @@
 #'
 #'
 
-CTSclockAge = function(data.m, CTSclock = c('Neu-In', 'Neu-Ex', 'Glia-In', 'Glia-Ex', 'Brain', 'Hep', 'Liver'),
+CTSclockAge = function(data.m, CTSclock = c('Neu-In', 'Neu-Sin', 'Glia-In', 'Glia-Sin', 'Brain', 'Hep', 'Liver'),
                        dataType = c('bulk', 'sorted'), CTF.m = NULL, tissue = c('brain', 'otherTissue'), coreNum = NULL){
 
-  if (is.null(coreNum)){coreNum = detectCores()}
+  if (is.null(coreNum)){coreNum = round(detectCores()/3)}
 
-  if (CTSclock %in% c('Neu-In', 'Neu-Ex', 'Glia-In', 'Glia-Ex', 'Brain')){
+  if (CTSclock %in% c('Neu-In', 'Neu-Sin', 'Glia-In', 'Glia-Sin', 'Brain')){
     data(list = paste0(CTSclock, 'Coef'))
 
-    if (CTSclock %in% c('Neu-Ex', 'Glia-Ex')){
+    if (CTSclock %in% c('Neu-Sin', 'Glia-Sin')){
       DNAmAgePred.v = pred(data.m, clockCoef.df)
     }else if(CTSclock %in% c('Neu-In', 'Glia-In', 'Brain')){
       data.m = ProcessData(data.m, dataType = dataType, tissue = tissue, CTF.m = CTF.m, coreNum = coreNum)
@@ -126,7 +126,7 @@ ProcessData = function(data.m, dataType = c('bulk', 'sorted'), tissue = c('brain
       }
     }
     ## Adjust for cell type fractions and normalize the data
-    print("Processing the data may take some time. Don't worry. :)")
+    print("Processing the data may take some time. Don't worry.")
     lm.o = lm(t(data.m) ~ CTF.m)
     res.m = t(lm.o$res)
     resSD.v = unlist(mclapply(1:nrow(res.m),function(i) sd(res.m[i,]), mc.cores = coreNum))

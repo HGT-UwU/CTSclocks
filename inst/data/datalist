@@ -1,0 +1,10 @@
+BrainCoef: clockCoef.df
+ExampleData_Liver: Age Test.m
+Glia-InCoef: clockCoef.df
+Glia-SinCoef: clockCoef.df
+HepClock: HepClock.glm
+LiverClock: LiverClock.glm
+MurphyGSE88890: beta.m phenotype.df
+Neu-InCoef: clockCoef.df
+Neu-SinCoef: clockCoef.df
+PaiGSE112179: beta.m phenotype.df

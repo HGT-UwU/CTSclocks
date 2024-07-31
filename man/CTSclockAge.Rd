@@ -6,7 +6,7 @@
 \usage{
 CTSclockAge(
   data.m,
-  CTSclock = c("Neu-In", "Neu-Ex", "Glia-In", "Glia-Ex", "Brain", "Hep", "Liver"),
+  CTSclock = c("Neu-In", "Neu-Sin", "Glia-In", "Glia-Sin", "Brain", "Hep", "Liver"),
   dataType = c("bulk", "sorted"),
   CTF.m = NULL,
   tissue = c("brain", "otherTissue"),
@@ -17,8 +17,8 @@ CTSclockAge(
 \item{data.m}{A DNAm matrix (row: CpGs, column: samples) of the samples you want to get
 DNAm age predicted by a CTS clock.}
 
-\item{CTSclock}{Which CTSclock you want to use to predict DNAm age ('Neu-In', 'Neu-Ex',
-'Glia-In', 'Glia-Ex', 'Brain', 'Hep', 'Liver').}
+\item{CTSclock}{Which CTSclock you want to use to predict DNAm age ('Neu-In', 'Neu-Sin',
+'Glia-In', 'Glia-Sin', 'Brain', 'Hep', 'Liver').}
 
 \item{dataType}{Type of the samples in your DNAm data ('bulk' or 'sorted').}
 
