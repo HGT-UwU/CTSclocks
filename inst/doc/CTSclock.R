@@ -77,7 +77,7 @@ print(p)
 library(CTSclocks)
 
 data(MurphyGSE88890)
-agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Ex', dataType = 'bulk', CTF.m = NULL, tissue = 'brain')
+agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Sin', dataType = 'bulk', CTF.m = NULL, tissue = 'brain')
 
 ## ----echo=FALSE---------------------------------------------------------------
 library(ggplot2)
@@ -113,7 +113,7 @@ print(p)
 library(CTSclocks)
 
 data(PaiGSE112179)
-agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Ex', dataType = 'sorted', CTF.m = NULL, tissue = 'brain')
+agePred.v = CTSclockAge(beta.m, CTSclock = 'Neu-Sin', dataType = 'sorted', CTF.m = NULL, tissue = 'brain')
 
 ## ----echo=FALSE---------------------------------------------------------------
 library(ggplot2)
